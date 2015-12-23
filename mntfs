@@ -11,6 +11,16 @@ fi
 MOUNT_DIR=/Users/$USER/Desktop/$1
 
 
+#取消挂载U盘
+if [[ "$2" = "off" ]]; then
+	#推出u盘
+	diskutil eject ${MOUNT_DIR}
+
+	rm -rf ${MOUNT_DIR}
+
+	exit
+fi
+
 #获取 Device Node Info
 DEVICE_NODE_INFO=`diskutil info /Volumes/$1 | grep 'Device Node:'`
 
@@ -23,15 +33,6 @@ fi
 #获取 Device Node
 DEVICE_NODE=${DEVICE_NODE_INFO#*Device Node:}
 
-#取消挂载U盘
-if [[ "$2" = "off" ]]; then
-	#推出u盘
-	diskutil eject ${NFTS_DIR}
-
-	rm -rf ${NFTS_DIR}
-fi
-
-
 #建立挂载点
 `mkdir -p ${MOUNT_DIR}`
 
@@ -42,8 +43,3 @@ diskutil eject ${DEVICE_NODE}
 sudo mount_ntfs -o rw,nobrowse ${DEVICE_NODE} ${MOUNT_DIR}
 
 echo 'Mount Disk Sucess!!' 
-
-
-
-
- 
