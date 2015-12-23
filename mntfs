@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Mail:kebing1011@163.com
+# 作者:毛可兵
+# QQ:175579463
+
+
 #指定U盘
 if [[ "$1" = "" ]]; then
 	echo 'Useage: mntfs [Volume Name] Mount a NTFS USB Disk'
