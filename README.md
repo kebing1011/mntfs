@@ -1,4 +1,4 @@
-# mntfs
+## mac os下原生挂载NTFS的U盘shell脚本
 
 ```
 Useage: mntfs [Volume Name] Mount a NTFS USB Disk
