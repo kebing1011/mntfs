@@ -8,7 +8,7 @@
 #指定U盘
 if [[ "$1" = "" ]]; then
 	echo 'Usage: mntfs [Volume Name] Mount a NTFS USB Disk'
-	echo '        mntfs [Volume Name] [off]  Unmount a NTFS USB Disk'
+	echo '       mntfs [Volume Name] [off]  Unmount a NTFS USB Disk'
 	exit
 fi
 
@@ -45,6 +45,6 @@ DEVICE_NODE=${DEVICE_NODE_INFO#*Device Node:}
 diskutil eject ${DEVICE_NODE}
 
 #挂载U盘
-sudo mount_ntfs -o rw,nobrowse ${DEVICE_NODE} ${MOUNT_DIR}
+sudo mount_ntfs -o rw,nobrowse "${DEVICE_NODE}" "${MOUNT_DIR}"
 
 echo 'Mount Disk Sucess!!' 
