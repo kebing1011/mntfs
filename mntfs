@@ -7,7 +7,7 @@
 
 #指定U盘
 if [[ "$1" = "" ]]; then
-	echo 'Useage: mntfs [Volume Name] Mount a NTFS USB Disk'
+	echo 'Usage: mntfs [Volume Name] Mount a NTFS USB Disk'
 	echo '        mntfs [Volume Name] [off]  Unmount a NTFS USB Disk'
 	exit
 fi
